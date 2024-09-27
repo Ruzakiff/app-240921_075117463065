@@ -8,8 +8,10 @@ import io
 import threading
 import time
 import base64
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Use an environment variable for the API key
 API_KEY = os.environ.get('FRONTEND_API_KEY', 'default_frontend_api_key')
